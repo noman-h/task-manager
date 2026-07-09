@@ -1,6 +1,5 @@
-
-const tasks = require("../model/taskModel");
-const user = require("../model/userModel");
+const tasks = require("../model/taskmodel");
+const user = require("../model/usermodel");
 const nodemailer = require("nodemailer");
 const { uploadimage } = require("../utils/file");
 

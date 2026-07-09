@@ -1,5 +1,5 @@
 const user = require("../model/userModel");
-const devices = require("../model/loginModel");
+const devices = require("../model/loginmodel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const moment = require("moment");
