@@ -7,7 +7,7 @@ function Viewmodel({ viewid, setviewid }) {
   async function handleview(id) {
     try {
       const token = localStorage.getItem("token");
-      const result = await axios.get(`http://localhost:5000/task/viewtask/${id}`, {
+      const result = await axios.get(`${import.meta.env.VITE_API_URL}/task/viewtask/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log(result);

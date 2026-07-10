@@ -27,7 +27,7 @@ function Forgetpass() {
       if(Object.keys(obj).length===0){
         const time=(moment().add(10,'minute').format())
      try{
-        const result=await axios.patch('http://localhost:5000/task/otpsend',{...forgetd,expiretime:time})
+        const result=await axios.patch(`${import.meta.env.VITE_API_URL}/task/otpsend`,{...forgetd,expiretime:time})
         console.log(result);
         
        if(result.status===200){
@@ -53,7 +53,7 @@ function Forgetpass() {
       if(Object.keys(obj).length===0){
      try{
       
-        const result=await axios.patch('http://localhost:5000/task/otpcheck',forgetd)
+        const result=await axios.patch(`${import.meta.env.VITE_API_URL}/task/otpcheck`,forgetd)
         if(result.status===200){
           setforgetshow(true)
            setnotific("otp verified successfully")
@@ -88,7 +88,7 @@ function Forgetpass() {
      forgetd.confirmpassword===forgetd.newpassword ){
      try{
       
-        const result=await axios.patch('http://localhost:5000/task/forgetpass',forgetd)
+        const result=await axios.patch(`${import.meta.env.VITE_API_URL}/task/forgetpass`,forgetd)
 
         if(result){
            

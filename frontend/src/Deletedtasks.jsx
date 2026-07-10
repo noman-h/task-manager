@@ -11,7 +11,7 @@ function Deletedtasks() {
 
   const [alltasks, setalltasks] = useState([]);
   async function gettasks() {
-    const result = await axios.get("http://localhost:5000/task/getdeltask", {
+    const result = await axios.get(`${import.meta.env.VITE_API_URL}/task/getdeltask`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -22,7 +22,7 @@ function Deletedtasks() {
   const [alluser, setallusers] = useState([]);
   async function getusers() {
     try{
-    const result = await axios.get("http://localhost:5000/task/getuser", {
+    const result = await axios.get(`${import.meta.env.VITE_API_URL}/task/getuser`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -46,7 +46,7 @@ function Deletedtasks() {
   async function handlerecover(item) {
     try{
     const result = await axios.patch(
-      `http://localhost:5000/task/restoredele/${item._id}`,
+      `${import.meta.env.VITE_API_URL}/task/restoredele/${item._id}`,
       {},
       {
         headers: {

@@ -22,7 +22,7 @@ function Login() {
 
     if (Object.keys(obj).length === 0) {
       try {
-        const result = await axios.post(`http://localhost:5000/task/login`, {
+        const result = await axios.post(`${import.meta.env.VITE_API_URL}/task/login`, {
           email: logind.email,
           password: logind.password,
         });

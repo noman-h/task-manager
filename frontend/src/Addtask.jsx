@@ -54,7 +54,7 @@ if (taskd._id) {
 
 
 
-            const result =await axios.patch('http://localhost:5000/task/updatetask',formData,{headers:{
+            const result =await axios.patch(`${import.meta.env.VITE_API_URL}/task/updatetask`,formData,{headers:{
               Authorization:`Bearer ${token}`
             }})
             
@@ -94,7 +94,7 @@ if (taskd.taskfile) {
 }
 
 
-            const result =await axios.post('http://localhost:5000/task/addtask',formData,{headers:{
+            const result =await axios.post(`${import.meta.env.VITE_API_URL}/task/addtask`,formData,{headers:{
               Authorization:`Bearer ${token}`
             }})
             
@@ -132,7 +132,7 @@ if (taskd.taskfile) {
     const [alluser,setallusers]=useState([])
    async function getusers(){
     try{
-    const result=await axios.get('http://localhost:5000/task/alluser',{headers:{
+    const result=await axios.get(`${import.meta.env.VITE_API_URL}/task/alluser`,{headers:{
               Authorization:`Bearer ${token}`
             }})
           setallusers(result.data)

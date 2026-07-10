@@ -27,7 +27,7 @@ app.use(fileupload())
 
 const port = process.env.PORT || 5000
 
-const url="mongodb://localhost:27017/tasksuser"
+const url="mongodb+srv://nomanhasan8503_db_user:jMcanGQlXhCURnLj@cluster0.iouyjx2.mongodb.net/tasksuser"
 
 
 

@@ -19,7 +19,7 @@ function Googlelogin() {
       const idToken = await user.getIdToken();
       
       // 3. Dispatch token to Node.js for backend session verification
-      const response = await axios.post('http://localhost:5000/task/googlelogin', {name:user.displayName,email:user.email,phoneno:user.phoneNumber,authtype:"google"}, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/task/googlelogin`, {name:user.displayName,email:user.email,phoneno:user.phoneNumber,authtype:"google"}, {
         headers: {
           Authorization: `Bearer ${idToken}`
         }

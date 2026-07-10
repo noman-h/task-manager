@@ -25,7 +25,7 @@ function Home() {
   async function gettasks() {
     try {
       const token = localStorage.getItem("token");
-      const result = await axios.get("http://localhost:5000/task/gettask", {
+      const result = await axios.get(`${import.meta.env.VITE_API_URL}/task/gettask`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -43,7 +43,7 @@ function Home() {
   const [alluser, setalluser] = useState([]);
   async function getallusers() {
     try{
-    const result = await axios.get("http://localhost:5000/task/alluser", {
+    const result = await axios.get(`${import.meta.env.VITE_API_URL}/task/alluser`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -62,7 +62,7 @@ function Home() {
   const [user, setuser] = useState([]);
   async function getusers() {
     try{
-    const result = await axios.get("http://localhost:5000/task/getuser", {
+    const result = await axios.get(`${import.meta.env.VITE_API_URL}/task/getuser`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -87,7 +87,7 @@ function Home() {
   async function del(id) {
     try{
     const result = await axios.delete(
-      `http://localhost:5000/task/deletetask/${id}`,
+      `${import.meta.env.VITE_API_URL}/task/deletetask/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -109,7 +109,7 @@ function Home() {
   async function tempdel(id) {
     try{
     const result = await axios.patch(
-      `http://localhost:5000/task/tempdele/${id}`,
+      `${import.meta.env.VITE_API_URL}/task/tempdele/${id}`,
       {},
       {
         headers: {
@@ -145,7 +145,7 @@ function Home() {
     if (currenttab === "mytasks" && !(i.taskactivity === "completed")) {
       try{
       const result = await axios.patch(
-        `http://localhost:5000/task/taskactive?id=${i._id}&&activity=${activity}`,
+        `${import.meta.env.VITE_API_URL}/task/taskactive?id=${i._id}&&activity=${activity}`,
         {},
         {
           headers: {
@@ -165,7 +165,7 @@ function Home() {
     } else if (!(currenttab === "mytasks")) {
       try{
       const result = await axios.patch(
-        `http://localhost:5000/task/taskactive?id=${i._id}&&activity=${activity}`,
+        `${import.meta.env.VITE_API_URL}/task/taskactive?id=${i._id}&&activity=${activity}`,
         {},
         {
           headers: {

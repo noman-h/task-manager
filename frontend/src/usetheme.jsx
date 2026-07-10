@@ -6,11 +6,12 @@ import { useState } from 'react'
 function usetheme() {
 
 
+
     const token=localStorage.getItem("token")
     const [theme,settheme]=useState(localStorage.getItem("theme") || "light")
   
     async function themeapi(){
-        const result=await axios.patch(`http://localhost:5000/task/changetheme`,{theme},{headers:{
+        const result=await axios.patch(`${import.meta.env.VITE_API_URL}/task/changetheme`,{theme},{headers:{
               Authorization:`Bearer ${token}`
             }})   
     }

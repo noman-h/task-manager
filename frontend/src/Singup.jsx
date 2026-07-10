@@ -29,7 +29,7 @@ function Singup() {
     if (Object.keys(obj).length === 0) {
       try {
         const result = await axios.post(
-          "http://localhost:5000/task/singup",
+          `${import.meta.env.VITE_API_URL}/task/singup`,
           singupd,
         );
 
